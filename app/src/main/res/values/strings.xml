@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">One</string>
+    <string name="splash_image_description">something for ads</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
