@@ -1,6 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+
+    ext{
+        compileSdkVersion=27
+        minSdkVersion=19
+        targetSdkVersion=27
+        supportLibraryVersion='27.1.1'
+        constraintLayoutVersion='1.1.2'
+        daggerVersion=2.16
+        junitVersion=4.12
+    }
     
     repositories {
         google()

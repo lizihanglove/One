@@ -21,11 +21,32 @@ public abstract class LoadingActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         loading = new Loading.Builder(LoadingActivity.this)
-                .setCancelable(false)
+                .setCancelable(true)
                 .build();
         super.onCreate(savedInstanceState);
 
     }
+
+    /**
+     * 显示加载动画
+     */
+    public void showLoading() {
+        if (loading == null) {
+            throw new IllegalStateException("loading 不能为空");
+        }
+        loading.show();
+    }
+
+    /**
+     * 关闭加载动画
+     */
+    public void dismissLoading() {
+        if (loading == null) {
+            throw new IllegalStateException("loading 不能为空");
+        }
+        loading.dismiss();
+    }
+
 
     @Override
     protected void onDestroy() {
