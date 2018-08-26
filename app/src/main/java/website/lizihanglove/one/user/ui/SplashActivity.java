@@ -1,4 +1,4 @@
-package website.lizihanglove.one.user;
+package website.lizihanglove.one.user.ui;
 
 import android.util.Log;
 import android.view.View;

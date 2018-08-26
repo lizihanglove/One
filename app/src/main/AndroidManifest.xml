@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".user.SplashActivity">
+            android:name=".user.ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".user.ui.LoginActivity" />
+        <activity android:name=".user.ui.RegisterActivity" />
     </application>
 
 </manifest>
