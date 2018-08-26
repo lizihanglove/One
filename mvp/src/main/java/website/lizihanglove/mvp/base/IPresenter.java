@@ -6,7 +6,5 @@ package website.lizihanglove.mvp.base;
  * @email one_mighty@163.com
  * @desc
  */
-public interface IPresenter<T extends IView> {
-    void attachView(T t);
-    void detachView();
+public interface IPresenter {
 }

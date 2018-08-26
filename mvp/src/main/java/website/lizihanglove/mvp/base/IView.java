@@ -7,4 +7,5 @@ package website.lizihanglove.mvp.base;
  * @desc base interface for view
  */
 public interface IView {
+
 }

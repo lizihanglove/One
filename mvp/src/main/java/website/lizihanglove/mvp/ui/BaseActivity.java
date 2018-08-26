@@ -24,13 +24,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView();
     }
 
-    protected abstract void initView();
-
-
     /**
      * 返回布局文件
      * @return R
      */
     public abstract  int getLayout();
+
+    /**
+     * 初始化视图
+     */
+    protected abstract void initView();
 
 }

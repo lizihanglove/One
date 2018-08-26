@@ -9,6 +9,10 @@ import website.lizihanglove.mvp.view.BaseView;
  * @email one_mighty@163.com
  * @desc
  */
-public abstract class BasePresenter<T extends BaseView> implements IPresenter<T> {
+public abstract class BasePresenter<T extends BaseView> implements IPresenter {
+    public T view;
 
+    public BasePresenter(T view) {
+        this.view = view;
+    }
 }
