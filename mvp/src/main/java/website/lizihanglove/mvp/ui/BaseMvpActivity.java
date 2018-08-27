@@ -13,6 +13,5 @@ import website.lizihanglove.mvp.presenter.BasePresenter;
 public abstract class BaseMvpActivity<T extends BasePresenter> extends LoadingActivity {
     @Inject
     public T presenter;
-    public abstract T getPresenter( BaseMvpActivity activity );
 
 }

@@ -8,6 +8,6 @@ import website.lizihanglove.mvp.base.IView;
  * @email one_mighty@163.com
  * @desc
  */
-public abstract class BaseView implements IView {
+public interface BaseView extends IView {
 
 }
