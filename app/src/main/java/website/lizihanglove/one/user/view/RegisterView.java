@@ -8,6 +8,6 @@ import website.lizihanglove.mvp.view.BaseView;
  * @email one_mighty@163.com
  * @desc
  */
-public abstract class RegisterView extends BaseView {
+public interface RegisterView extends BaseView {
 
 }

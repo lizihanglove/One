@@ -1,5 +1,7 @@
 package website.lizihanglove.one.user.presenter;
 
+import javax.inject.Inject;
+
 import website.lizihanglove.mvp.base.IView;
 import website.lizihanglove.mvp.presenter.BasePresenter;
 import website.lizihanglove.mvp.view.BaseView;
@@ -12,6 +14,7 @@ import website.lizihanglove.mvp.view.BaseView;
  */
 public class LoginPresenter<LoginView extends BaseView> extends BasePresenter<LoginView> {
 
+    @Inject
     public LoginPresenter(LoginView view) {
         super(view);
     }

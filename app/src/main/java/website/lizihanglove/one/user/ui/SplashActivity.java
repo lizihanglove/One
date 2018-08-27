@@ -1,5 +1,6 @@
 package website.lizihanglove.one.user.ui;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 
@@ -20,15 +21,16 @@ public class SplashActivity extends FullScreenActivity {
         findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i(TAG, "initView: "+R.layout.activity_splash);
+                Log.i(TAG, "initView: " + R.layout.activity_splash);
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
             }
         });
-        Log.i(TAG, "initView: "+R.layout.activity_splash);
+        Log.i(TAG, "initView: " + R.layout.activity_splash);
     }
 
     @Override
     public int getLayout() {
-        Log.i(TAG, "getLayout: "+R.layout.activity_splash);
+        Log.i(TAG, "getLayout: " + R.layout.activity_splash);
         return R.layout.activity_splash;
     }
 }

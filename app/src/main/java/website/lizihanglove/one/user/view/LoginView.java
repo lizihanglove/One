@@ -8,6 +8,7 @@ import website.lizihanglove.mvp.view.BaseView;
  * @email one_mighty@163.com
  * @desc
  */
-public abstract class LoginView extends BaseView {
+public interface  LoginView extends BaseView {
+
 
 }

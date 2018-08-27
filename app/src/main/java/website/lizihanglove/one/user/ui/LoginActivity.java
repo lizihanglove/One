@@ -1,8 +1,9 @@
 package website.lizihanglove.one.user.ui;
 
-import website.lizihanglove.mvp.presenter.BasePresenter;
 import website.lizihanglove.mvp.ui.BaseMvpActivity;
 import website.lizihanglove.one.R;
+import website.lizihanglove.one.user.presenter.LoginPresenter;
+import website.lizihanglove.one.user.view.LoginView;
 
 /**
  * @author lizihanglove
@@ -10,8 +11,7 @@ import website.lizihanglove.one.R;
  * @email one_mighty@163.com
  * @desc
  */
-public class LoginActivity<LoginPresenter extends BasePresenter> extends BaseMvpActivity<LoginPresenter> {
-
+public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements LoginView {
 
     @Override
     public int getLayout() {
@@ -19,14 +19,8 @@ public class LoginActivity<LoginPresenter extends BasePresenter> extends BaseMvp
     }
 
     @Override
-    public LoginPresenter getPresenter(BaseMvpActivity activity) {
-
-        return presenter;
-    }
-
-    @Override
     protected void initView() {
-
+        //presenter.login();
     }
 
 
