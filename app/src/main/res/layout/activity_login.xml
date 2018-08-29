@@ -6,26 +6,41 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginBottom="@dimen/dp_2"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_5"
         android:layout_marginLeft="@dimen/dp_50"
         android:layout_marginRight="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_2"
-        android:background="@drawable/input_selector">
+        android:background="@drawable/input_selector"
+        android:hint="@string/username_hint"
+        android:padding="@dimen/dp_5"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite">
 
-    </LinearLayout>
+    </EditText>
 
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="@dimen/dp_40"
         android:layout_marginBottom="@dimen/dp_2"
         android:layout_marginLeft="@dimen/dp_50"
         android:layout_marginRight="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_2"
-        android:background="@drawable/input_selector">
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@drawable/input_selector"
+        android:hint="@string/password_hint"
+        android:padding="@dimen/dp_5"
+        android:textColorHint="@color/colorWhite">
 
-    </LinearLayout>
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="登录"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
