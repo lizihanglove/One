@@ -1,7 +1,6 @@
 package website.lizihanglove.core.net;
 
 
-
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +10,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import website.lizihanglove.core.net.api.Api;
 import website.lizihanglove.core.net.api.ServerApi;
+import website.lizihanglove.core.net.interceptor.ReceivedCookiesInterceptor;
 import website.lizihanglove.core.net.option.Option;
 
 /**
@@ -23,12 +23,8 @@ import website.lizihanglove.core.net.option.Option;
 
 public class RetrofitManager {
     private static RetrofitManager mRetrofitManager;
-    private static ArrayList<Api> mServers;
     private static Retrofit.Builder mRetrofitBuilder;
-
-    private RetrofitManager() {
-
-    }
+    private RetrofitManager() {}
 
     /**
      * 创建网络请求
@@ -42,31 +38,16 @@ public class RetrofitManager {
                 .build()
                 .create(api.getServerApi());
         return t;
-
-    }
-
-    /**
-     * 获取默认服务器网络请求接口对应的类
-     *
-     * @return 服务器网络请求接口对应的类
-     */
-    public ServerApi getServer() {
-        if (null != mRetrofitManager) {
-            Api<ServerApi> api = mServers.get(0);
-            return createRequest(api);
-        } else {
-            throw new IllegalStateException("RetrofitManager暂时没有初始化！");
-        }
     }
 
     /**
      * 创建第三方服务器请求
      *
-     * @param api 服务器接口集合接口
      * @param <T> 服务器接口集合接口泛型
      * @return 返回服务器请求
      */
-    public <T> T getOtherServer(Api<T> api) {
+    public <T> T getServer(Class<T> t, String baseUrl) {
+        Api<T> api = new Api<>(t, baseUrl);
         return createRequest(api);
     }
 
@@ -95,12 +76,11 @@ public class RetrofitManager {
         builder.readTimeout(option.getReadTimeout(), TimeUnit.SECONDS);
         builder.writeTimeout(option.getWriteTimeout(), TimeUnit.SECONDS);
         builder.retryOnConnectionFailure(option.isRetry());
+        builder.addInterceptor(new ReceivedCookiesInterceptor());
         OkHttpClient okHttpClient = builder.build();
-
         mRetrofitBuilder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient);
-        mServers = option.getServers();
     }
 }

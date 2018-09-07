@@ -2,6 +2,8 @@ package website.lizihanglove.core.store;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import java.util.HashSet;
 import java.util.Set;
 
 import website.lizihanglove.core.constant.SpConstant;
@@ -16,7 +18,6 @@ import website.lizihanglove.core.constant.SpConstant;
 
 public final class SpUtil {
 
-    private static boolean mInit;
     private static Context mContext;
     private static SharedPreferences sp;
     private static SpUtil instance;
@@ -37,7 +38,7 @@ public final class SpUtil {
      * @return SpUtil初始化状态
      */
     public static boolean isInit() {
-        return mInit;
+        return instance != null;
     }
 
 
@@ -50,7 +51,6 @@ public final class SpUtil {
         if (mContext != null) {
             sp = mContext.getSharedPreferences(SpConstant.SP_NAME, Context.MODE_PRIVATE);
             editor = sp.edit();
-            mInit = true;
         } else {
             throw new IllegalStateException("上下文不能为空！");
         }
@@ -312,6 +312,20 @@ public final class SpUtil {
             throw new UnsupportedOperationException("SharePreference不能为空！请初始化该类！");
         }
 
+    }
+
+    /**
+     * SP中读取字符串集合
+     * @param key 键
+     * @param defaultValue 默认值
+     * @return
+     */
+    public static Set<String> getStringSet(String key , Set<String> defaultValue ){
+        if (null != sp) {
+            return sp.getStringSet(key,defaultValue);
+        } else {
+            throw new UnsupportedOperationException("SharePreference不能为空！请初始化该类！");
+        }
     }
 
     /**

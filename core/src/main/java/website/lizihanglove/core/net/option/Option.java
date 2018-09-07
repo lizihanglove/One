@@ -17,11 +17,6 @@ public class Option implements Serializable {
     long readTimeout;
     long writeTimeout;
     boolean retry;
-    /**
-     * 基于两个服务器的地址列表
-     */
-    ArrayList<Api> servers = new ArrayList<Api>(2);
-
 
     /**
      * 网络配置类私有构造方法
@@ -33,7 +28,6 @@ public class Option implements Serializable {
         this.readTimeout = origin.readTimeout;
         this.writeTimeout = origin.writeTimeout;
         this.retry = origin.retry;
-        this.servers = origin.servers;
     }
 
     /**
@@ -82,18 +76,10 @@ public class Option implements Serializable {
     }
 
     /**
-     * 获取服务器地址集合
-     * @return 服务器地址集合
-     */
-    public ArrayList<Api> getServers() {
-        return servers;
-    }
-
-    /**
      * 构建者类
      */
     public static class Builder {
-        private Option target;
+        private Option target = new  Option();
 
         /**
          * 设置连接超时时间
@@ -139,26 +125,13 @@ public class Option implements Serializable {
             return this;
         }
 
-
-        /**
-         * 设置服务器常用基址
-         *
-         * @param servers 默认是两个基本地址，第一个默认为常用服务器地址，第二个默认为第三方地址，
-         *                请正确配置
-         * @return 需要构建的原始对象
-         */
-        public Builder setServers(ArrayList<Api> servers) {
-            target.servers = servers;
-            return this;
-        }
-
         /**
          * 真正构建目标对象
          *
          * @return 目标对象
          */
         public Option build() {
-            return new Option(target);
+            return target;
         }
     }
 }

@@ -11,4 +11,5 @@ package website.lizihanglove.core.constant;
 public interface SpConstant {
 
     String SP_NAME = "share_preference_name";
+    String COOKIE_NAME = "cookie";
 }

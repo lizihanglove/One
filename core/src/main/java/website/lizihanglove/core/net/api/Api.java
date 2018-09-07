@@ -18,7 +18,7 @@ public class Api<T> implements Serializable {
      * @param serverApi 服务器接口集合
      * @param baseUrl   服务器基本地址
      */
-    public Api(Class<T> serverApi, String baseUrl) {
+    public Api(Class serverApi, String baseUrl) {
         this.serverApi = serverApi;
         this.baseUrl = baseUrl;
     }

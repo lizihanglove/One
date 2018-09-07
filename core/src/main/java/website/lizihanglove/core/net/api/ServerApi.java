@@ -7,4 +7,6 @@ package website.lizihanglove.core.net.api;
  * @desc
  */
 public interface ServerApi {
+
+
 }
