@@ -26,6 +26,8 @@ dependencies {
     api "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
     api "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
     api "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
